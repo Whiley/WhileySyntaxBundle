@@ -1,0 +1,93 @@
+%YAML 1.2
+---
+name: whiley
+file_extensions:
+  - whiley
+scope: source.whiley
+contexts:
+  main:
+    # Strings
+    - match: '"'
+      scope: punctuation.definition.string.begin.whiley
+      push: double_quoted_string
+
+    # Numbers
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.whiley
+
+    # Boolean Constants
+    - match: '\b(false|true|null)\b'
+      scope: constant.language
+
+    # Block comments
+    - match: '/\*'
+      scope: punctuation.definition.comment
+      push: block_comment
+
+    # Line comments
+    - match: '//'
+      scope: punctuation.definition.comment
+      push: line_comment
+
+    # Packages
+    - match: '^package\b'
+      scope: entity.name.class.whiley
+
+    # Imports
+    - match: '^import\b'
+      scope: entity.name.whiley
+      push: import_line
+
+    # Declarations
+    - match: '\b(function|method|property|type|variant)\b'
+      scope: entity.name.function
+
+    # Keywords (Control-Flow)
+    - match: '\b(assert|assume|break|case|continue|debug|default|do|else|ensures|fail|for|if|requires|return|skip|switch|where|while)\b'
+      scope: keyword.control.whiley
+
+    # Keywords (Word Operators)
+    - match: '\b(all|in|is|new|no|old|some)\b'
+      scope: keyword.operator.word
+
+    # Keywords (Logical Operators)
+    - match: '(&&|\|\||!|==>|<==>)'
+      scope: keyword.operator.logical
+
+    # Keywords (Arithmetic)
+    - match: '(<=|<|>=|>|==|!=|+|-|\*|/)'
+      scope: keyword.operator.arithmetic    
+
+    # Keywords (Other)
+    - match: '\b(bool|byte|export|final|int|native|private|protected|public|unsafe|void)\b'
+      scope: keyword.other
+
+    # Punctionation
+    - match: ':'
+      scope: punctuation.separator
+
+  block_comment:
+    - meta_scope: comment.line.whiley
+    - match: '\*/'
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.whiley
+    - match: $
+      pop: true
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.whiley
+    - match: '\\.'
+      scope: constant.character.escape.whiley
+    - match: '"'
+      scope: punctuation.definition.string.end.whiley
+      pop: true
+
+  import_line:
+      # line end
+    - match: '$'
+      pop: true
+      # keywords
+    - match: '\b(from|with)\b'
+      scope: keyword.import
