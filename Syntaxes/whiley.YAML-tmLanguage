@@ -1,0 +1,83 @@
+name: Whiley
+uuid: 5ee71b5b-00f0-4a98-904e-fccb7a06569f
+scopeName: source.whiley
+fileTypes:
+  - whiley
+
+patterns:
+  # Comments
+  - name: comment.line.whiley
+    begin: '//[^/]*'
+    end: '$\n?'
+
+  - name: comment.block.whiley
+    begin: '/\*'
+    end: '\*/'
+
+  # Constants
+  - name: constant.language.whiley
+    match: '\b(false|true|null)\b'
+
+  # Declarations
+  - name: entity.name.function.whiley
+    match: '\b(function|method|property|type|variant)\b'
+
+  # Imports
+  - match: '^(import)\s*([a-zA-Z0-9:]+)\s*(with)\s*([a-zA-Z_0-9]+)$'
+    captures:
+      '1': {name: entity.name.class.whiley}
+      '2': {name: variable.whiley}
+      '3': {name: entity.name.class.whiley}
+      '4': {name: variable.whiley}
+  
+  - match: '^(import)\s*([a-zA-Z0-9_]+)\s*(from)\s*([a-zA-Z0-9:]+)$'
+    captures:
+      '1': {name: entity.name.class.whiley}
+      '2': {name: variable.whiley}
+      '3': {name: entity.name.class.whiley}
+      '4': {name: variable.whiley}
+
+  - match: '^(import)\s*([a-zA-Z0-9:]+)$'
+    captures:
+      '1': {name: entity.name.class.whiley}
+      '2': {name: variable.whiley}
+    
+  # Keywords      
+  - name: keyword.control.whiley    
+    match: '\b(assert|assume|break|case|continue|debug|default|do|else|ensures|fail|for|if|requires|return|skip|switch|where|while)\b'
+  
+  - name: keyword.operator.word.whiley
+    match: '\b(all|in|is|new|no|old|some)\b'
+
+  - name: keyword.other.whiley
+    match: '\b(bool|byte|export|final|int|native|private|protected|public|unsafe|void)\b'
+
+  # Numbers
+  - name: constant.numeric.whiley
+    match: '\b(-)?[0-9.]+\b'
+
+  # Operators
+  - name: keyword.operator.logical.whiley
+    match: '(&&|\|\||!|==>|<==>)'
+
+  - name: keyword.operator.arithmetic.whiley
+    match: '(<=|<|>=|>|==|!=|+|-|\*|/)'
+
+  # Packages 
+  - name: entity.name.class.whiley
+    match: '^package\b'
+
+  # Strings
+  - name: punctuation.definition.string.whiley
+    begin: '"'
+    end: '"'
+
+  # Variables
+  - name: variable.constant.whiley
+    match: '\b[_A-Z][_A-Z0-9]+\b'
+    
+  - name: entity.name.type.whiley
+    match: '\b[_a-zA-Z][_a-zA-Z0-9]*_t\b'
+
+  - name: variable.whiley
+    match: '\b[_a-zA-Z][_a-zA-Z0-9]*\b'
