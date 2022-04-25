@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>qnir01001110@tznvy.pbz</string>
+	<key>contactName</key>
+	<string>David J. Pearce</string>
+	<key>description</key>
+	<string>TextMate Bundle for Whiley language.</string>
+	<key>name</key>
+	<string>Whiley</string>
+	<key>uuid</key>
+	<string>5ee71b5b-00f0-4a98-904e-fccb7a06569f</string>
+</dict>
+</plist>
