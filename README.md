@@ -1,8 +1,12 @@
 # WhileySyntaxBundle
 
-This provides syntax highlighting for programs written in the
-[Whiley](http://whiley.org).  An example Whiley program is the
-following:
+This provides TextMate and Sublime bundles to enable syntax
+highlighting for programs written in the [Whiley](http://whiley.org).
+This also serves as the grammar for
+(github/linguist)[https://github.com/github/linguist] (which enables
+syntax highlighting on Github).  
+
+An example Whiley program is the following:
 
 ```whiley
 type nat is (int x) where x >= 0
@@ -25,3 +29,19 @@ ensures r >= -1 && r < |items|:
     //
     return -1
 ```
+
+## Install (Sublime)
+
+Eventually you will be able to install via
+(PackageControl)[https://packagecontrol.io/].  For now, you can copy
+the `whiley.submlime-text` file into
+`.config/sublime-tests/Packages/User`.
+
+## Install (TextMate)
+
+```
+mkdir -p ~/Library/Application\ Support/TextMate/Bundles
+cd ~/Library/Application\ Support/TextMate/Bundles
+git clone git://github.com/Whiley/WhileySyntaxBundle Whiley.tmbundle
+```
+
