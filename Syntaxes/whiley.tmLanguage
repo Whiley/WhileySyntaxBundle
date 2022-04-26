@@ -141,7 +141,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(&lt;=|&lt;|&gt;=|&gt;|==|!=|+|-|\*|/)</string>
+			<string>(&lt;=|&lt;|&gt;=|&gt;|==|!=|\+|-|\*|/)</string>
 			<key>name</key>
 			<string>keyword.operator.arithmetic.whiley</string>
 		</dict>

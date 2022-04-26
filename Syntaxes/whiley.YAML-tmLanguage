@@ -61,7 +61,7 @@ patterns:
     match: '(&&|\|\||!|==>|<==>)'
 
   - name: keyword.operator.arithmetic.whiley
-    match: '(<=|<|>=|>|==|!=|+|-|\*|/)'
+    match: '(<=|<|>=|>|==|!=|\+|-|\*|/)'
 
   # Packages 
   - name: entity.name.class.whiley

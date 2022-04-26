@@ -47,7 +47,7 @@ contexts:
       scope: constant.numeric.whiley
     - match: (&&|\|\||!|==>|<==>)
       scope: keyword.operator.logical.whiley
-    - match: (<=|<|>=|>|==|!=|+|-|\*|/)
+    - match: (<=|<|>=|>|==|!=|\+|-|\*|/)
       scope: keyword.operator.arithmetic.whiley
     - match: ^package\b
       scope: entity.name.class.whiley
