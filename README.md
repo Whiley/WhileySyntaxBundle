@@ -3,7 +3,7 @@
 This provides TextMate and Sublime bundles to enable syntax
 highlighting for programs written in the [Whiley](http://whiley.org).
 This also serves as the grammar for
-(github/linguist)[https://github.com/github/linguist] (which enables
+[github/linguist](https://github.com/github/linguist) (which enables
 syntax highlighting on Github).  
 
 An example Whiley program is the following:
@@ -33,7 +33,7 @@ ensures r >= -1 && r < |items|:
 ## Install (Sublime)
 
 Eventually you will be able to install via
-(PackageControl)[https://packagecontrol.io/].  For now, you can copy
+[PackageControl](https://packagecontrol.io/).  For now, you can copy
 the `whiley.submlime-text` file into
 `.config/sublime-tests/Packages/User`.
 
