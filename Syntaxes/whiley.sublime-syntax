@@ -21,19 +21,19 @@ contexts:
       scope: constant.language.whiley
     - match: \b(function|method|property|type|variant)\b
       scope: entity.name.function.whiley
-    - match: '^(import)\s*([a-zA-Z0-9:]+)\s*(with)\s*([a-zA-Z_0-9]+)$'
+    - match: '^(import)\s*([a-zA-Z0-9:]+)\s*(with)\s*([a-zA-Z_0-9]+)'
       captures:
         1: entity.name.class.whiley
         2: variable.whiley
         3: entity.name.class.whiley
         4: variable.whiley
-    - match: '^(import)\s*([a-zA-Z0-9_]+)\s*(from)\s*([a-zA-Z0-9:]+)$'
+    - match: '^(import)\s*([a-zA-Z0-9_]+)\s*(from)\s*([a-zA-Z0-9:]+)'
       captures:
         1: entity.name.class.whiley
         2: variable.whiley
         3: entity.name.class.whiley
         4: variable.whiley
-    - match: '^(import)\s*([a-zA-Z0-9:]+)$'
+    - match: '^(import)\s*([a-zA-Z0-9:]+)'
       captures:
         1: entity.name.class.whiley
         2: variable.whiley
@@ -56,9 +56,12 @@ contexts:
         - meta_scope: punctuation.definition.string.whiley
         - match: '"'
           pop: true
+        - include: escaped-char
     - match: '\b[_A-Z][_A-Z0-9]+\b'
       scope: variable.constant.whiley
     - match: '\b[_a-zA-Z][_a-zA-Z0-9]*_t\b'
       scope: entity.name.type.whiley
     - match: '\b[_a-zA-Z][_a-zA-Z0-9]*\b'
       scope: variable.whiley
+  escaped-char:
+    - match: \\.

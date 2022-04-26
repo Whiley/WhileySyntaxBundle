@@ -63,7 +63,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(import)\s*([a-zA-Z0-9:]+)\s*(with)\s*([a-zA-Z_0-9]+)$</string>
+			<string>^(import)\s*([a-zA-Z0-9:]+)\s*(with)\s*([a-zA-Z_0-9]+)</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -90,7 +90,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(import)\s*([a-zA-Z0-9_]+)\s*(from)\s*([a-zA-Z0-9:]+)$</string>
+			<string>^(import)\s*([a-zA-Z0-9_]+)\s*(from)\s*([a-zA-Z0-9:]+)</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -107,7 +107,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(import)\s*([a-zA-Z0-9:]+)$</string>
+			<string>^(import)\s*([a-zA-Z0-9:]+)</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -158,6 +158,13 @@
 			<string>"</string>
 			<key>name</key>
 			<string>punctuation.definition.string.whiley</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#escaped-char</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -178,6 +185,14 @@
 			<string>variable.whiley</string>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>escaped-char</key>
+		<dict>
+			<key>match</key>
+			<string>\\.</string>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.whiley</string>
 	<key>uuid</key>

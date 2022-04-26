@@ -23,21 +23,21 @@ patterns:
     match: '\b(function|method|property|type|variant)\b'
 
   # Imports
-  - match: '^(import)\s*([a-zA-Z0-9:]+)\s*(with)\s*([a-zA-Z_0-9]+)$'
+  - match: '^(import)\s*([a-zA-Z0-9:]+)\s*(with)\s*([a-zA-Z_0-9]+)'
     captures:
       '1': {name: entity.name.class.whiley}
       '2': {name: variable.whiley}
       '3': {name: entity.name.class.whiley}
       '4': {name: variable.whiley}
   
-  - match: '^(import)\s*([a-zA-Z0-9_]+)\s*(from)\s*([a-zA-Z0-9:]+)$'
+  - match: '^(import)\s*([a-zA-Z0-9_]+)\s*(from)\s*([a-zA-Z0-9:]+)'
     captures:
       '1': {name: entity.name.class.whiley}
       '2': {name: variable.whiley}
       '3': {name: entity.name.class.whiley}
       '4': {name: variable.whiley}
 
-  - match: '^(import)\s*([a-zA-Z0-9:]+)$'
+  - match: '^(import)\s*([a-zA-Z0-9:]+)'
     captures:
       '1': {name: entity.name.class.whiley}
       '2': {name: variable.whiley}
@@ -71,6 +71,8 @@ patterns:
   - name: punctuation.definition.string.whiley
     begin: '"'
     end: '"'
+    patterns:
+      - include: '#escaped-char'
 
   # Variables
   - name: variable.constant.whiley
@@ -81,3 +83,7 @@ patterns:
 
   - name: variable.whiley
     match: '\b[_a-zA-Z][_a-zA-Z0-9]*\b'
+
+repository:
+  escaped-char:
+    match: '\\.'
